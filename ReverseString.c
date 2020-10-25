@@ -1,31 +1,28 @@
-#include <stdio.h>
+#include<stdio.h>
 int main()
 {
-    int n, arr[10];
+    char str[100];
+    int count=0,end,start;
+    
+    //read the string with whitespaces
+    printf("Enter the string:");
+    scanf ("%[^\n]%*c", str);
 
-    //read the number of elements
-    printf("Enter the number of array elements:");
-    scanf("%d", &n);
 
-    //read the elements
-    for (int i = 0; i < n;i++)
+    //count the string length
+    while(str[count]!='\0')
     {
-        scanf("%d", &arr[i]);
+        count++;
     }
 
     //reverse the string
-    for (int start = 0, end = n - 1; start < n / 2;start++,end--)
+    for (start = 0,end=count-1; start < count/2;start++,end--)
     {
-        int temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
+        char temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
     }
 
-    //display the reverse string
-    for (int i = 0; i < n;i++)
-    {
-        printf("%d\t", arr[i]);
-    }
-
+    printf("Reverse of the string:%s", str);
     return 0;
 }
