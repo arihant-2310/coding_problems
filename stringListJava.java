@@ -16,6 +16,7 @@ class stringListJava {
         for (String word : list) {
             System.out.println(word);
         }
+        sc.close();
 
     }
 }
